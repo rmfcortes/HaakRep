@@ -1,0 +1,35 @@
+h2 {
+    font-weight: 700;
+    color: black;
+    margin-left: 0.5rem;
+}
+
+.resumen_container {
+    margin-top: 1rem;
+    padding: 16px;
+    width: 90%;
+    margin-left: 5%;
+    border-radius: 500px;
+    -moz-box-shadow: -3.5px 3px 3px 3px #dfd2bd;
+    -webkit-box-shadow: -3.5px 3px 3px 3px #dfd2bd;
+    box-shadow: -3.5px 3px 3px 3px #dfd2bd;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.tab_title {
+    display: block;
+    text-align: center;
+    font-weight: 700;
+    font-size: 1.3rem;
+}
+
+.saldoPositivo {
+    color: green;
+}
+
+.saldoNegativo {
+    color: red;
+}

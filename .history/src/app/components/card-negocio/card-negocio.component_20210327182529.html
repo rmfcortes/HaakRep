@@ -1,0 +1,22 @@
+<h2>Recoger en: {{item.negocio_name}}</h2>
+<ion-item lines="none" (click)="verMapa()" detail>
+    <ion-label class="ion-text-wrap">{{item.address_negocio}}</ion-label>
+    <ion-icon slot="start" name="map"></ion-icon>
+</ion-item>
+<ion-item lines="none" (click)="llamar(item.phone_number_negocio)" detail>
+    <ion-label class="ion-text-wrap">{{item.phone_number_negocio}}</ion-label>
+    <ion-icon slot="start" name="call"></ion-icon>
+</ion-item>
+<ion-item lines="none">
+    <h5 style="font-weight: 700;">Entregar a: {{item.user_name}}</h5>
+</ion-item>
+<ion-item *ngIf="item.phone_number_user" detail lines="none" (click)="llamar(item.phone_number_user)">
+    <ion-label>{{item.phone_number_user}}</ion-label>
+    <ion-icon slot="start" name="call"></ion-icon>
+</ion-item>
+<ion-item style="margin-top: 0.5rem;" *ngIf="!inOrder">
+    <!-- <ion-label color="primary" style="font-weight: 700;">Gana: {{item.ganancia | currency:'CAD':'symbol-narrow':'1.0-2' }}</ion-label> -->
+    <ion-button (click)="verPedido()" slot="end" class="gradient--">
+        Detalles pedido
+    </ion-button>
+</ion-item>

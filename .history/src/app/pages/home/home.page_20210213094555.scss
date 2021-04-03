@@ -1,0 +1,24 @@
+h2 {
+    font-weight: 700;
+    color: black;
+    margin-left: 0.5rem;
+}
+
+.saldo {
+    text-align: center;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    text-decoration: underline;
+    border-radius: 500px;
+    height: 3rem;
+}
+
+.saldoPositivo {
+    color: green;
+    border: green 2px solid;
+}
+
+.saldoNegativo {
+    color: red;
+    border: red 2px solid;
+}

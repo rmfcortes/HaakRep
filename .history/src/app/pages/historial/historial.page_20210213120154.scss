@@ -1,0 +1,34 @@
+.btn {
+    width: 90%;
+    margin-left: 5%;
+    margin-top: 2rem;
+    height: 3rem;
+}
+
+.resumen_container {
+    margin-top: 2rem;
+    padding: 16px;
+    width: 80%;
+    margin-left: 10%;
+    border-radius: 500px;
+    -moz-box-shadow: inset 0 0 10px #f8d2af;
+    -webkit-box-shadow: inset 0 0 10px #f8d2af;
+    box-shadow: inset 0 0 10px #f8d2af;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.tab_title {
+    display: block;
+    text-align: center;
+    font-weight: 700;
+    font-size: 2rem;
+}
+
+.tab-sub {
+    display: block;
+    text-align: center;
+    font-weight: 300;
+    font-size: 1rem;
+}

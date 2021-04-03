@@ -1,5 +1,7 @@
 {
   "name": "HaakRepartidor",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

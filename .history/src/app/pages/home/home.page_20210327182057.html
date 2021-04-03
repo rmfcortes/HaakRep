@@ -1,0 +1,67 @@
+<ion-header class="ion-no-border">
+    <ion-toolbar style="border-bottom: 2px var(--ion-color-primary) solid;">
+        <ion-buttons slot="end">
+            <ion-button (click)="cerrarSesion()">
+                <ion-icon slot="icon-only" name="log-out"></ion-icon>
+            </ion-button>
+        </ion-buttons>
+        <ion-title style="font-weight: 700;" *ngIf="nombre !== 'null'">
+            {{nombre | titlecase}}
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+    <!-- Refresher -->
+    <ion-refresher slot="fixed" pullFactor="0.5" pullMin="100" pullMax="200" (ionRefresh)="init($event)">
+        <ion-refresher-content pullingIcon="chevron-down-circle-outline" pullingText="Arrastra para actualizar pedidos" refreshingSpinner="circles" refreshingText="Actualizando...">
+        </ion-refresher-content>
+    </ion-refresher>
+
+    <!-- Saldo -->
+    <!-- <div class="resumen_container" *ngIf="saldo">
+        <div class="tab_title ganancia" [routerLink]="['/historial']" routerDirection=“forward” *ngIf="saldo" [ngClass]="saldo >= 0 ? 'saldoPositivo' : 'saldoNegativo'">
+            Saldo: {{saldo}} MXN
+        </div>
+    </div> -->
+
+    <!-- Pedidos nuevos -->
+    <ion-card *ngFor="let item of new_orders; let i = index">
+        <ion-item lines="full">
+            <h2>Recoger en: {{item.negocio_name}}</h2>
+        </ion-item>
+        <ion-item lines="none">
+            <ion-label class="ion-text-wrap">{{item.address_negocio}}</ion-label>
+            <ion-icon slot="end" color="primary" name="map"></ion-icon>
+        </ion-item>
+        <ng-container *ngIf="!item.solicitado; else solTemp">
+            <ion-button (click)="aceptOrder(item)" expand="block" shape="round" style="margin-top: 0.75rem; margin-bottom: 0.75rem;">
+                Tomar pedido.
+            </ion-button>
+            <!-- Gana {{item.ganancia | currency:'CAD':'symbol-narrow':'1.0-2'}} -->
+        </ng-container>
+        <ng-template #solTemp>
+            <ion-item lines="none" style="text-align: center;">
+                <ion-spinner name="dots" color="primary" style="font-size: large; margin: auto"></ion-spinner>
+            </ion-item>
+        </ng-template>
+    </ion-card>
+
+
+    <!-- Pedidos en curso-->
+    <ion-card *ngFor="let item of orders">
+        <!-- Camino a la tienda -->
+        <ng-container *ngIf="!item.recolectado; else recolectadoTemp">
+            <app-card-negocio [item]="item" (call)="llamar($event)" (map)="navigate($event)" (order)="seeOrder($event)"></app-card-negocio>
+        </ng-container>
+        <!-- Camino al Cliente -->
+        <ng-template #recolectadoTemp>
+            <app-card-cliente [item]="item" (call)="llamar($event)" (map)="navigate($event)" (order)="seeOrder($event)"></app-card-cliente>
+        </ng-template>
+    </ion-card>
+
+    <!-- No hay pedidos -->
+    <ion-item lines="none" style="text-align: center; margin-top: 1rem;" *ngIf="orders.length === 0 && new_orders.length === 0">
+        <ion-label class="ion-text-wrap" color="medium">Por el momento no tienes pedidos activos</ion-label>
+    </ion-item>
+</ion-content>

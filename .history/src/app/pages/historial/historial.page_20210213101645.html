@@ -1,0 +1,23 @@
+<ion-header>
+    <ion-toolbar color="primary">
+        <ion-buttons slot="start">
+            <ion-button [routerLink]="['']" routerDirection=“back”>
+                <ion-icon slot="icon-only" name="chevron-back"></ion-icon>
+            </ion-button>
+        </ion-buttons>
+        <ion-title>Historial</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-item>
+        <ion-label>Fecha inicial</ion-label>
+        <ion-datetime (ionChange)="startChange($event.detail.value)" doneText="Aceptar" cancelText="Cancelar" displayFormat="D MMM YYYY" min="2021" [value]="hoy"></ion-datetime>
+    </ion-item>
+
+    <ion-item>
+        <ion-label>Fecha final</ion-label>
+        <ion-datetime (ionChange)="startChange($event.detail.value)" doneText="Aceptar" cancelText="Cancelar" displayFormat="D MMM YYYY" min="2021" [value]="hoy"></ion-datetime>
+    </ion-item>
+
+</ion-content>

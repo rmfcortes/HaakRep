@@ -1,0 +1,56 @@
+<ion-header>
+    <ion-toolbar color="primary">
+        <ion-buttons slot="start">
+            <ion-button [routerLink]="['']" routerDirection=“back”>
+                <ion-icon slot="icon-only" name="chevron-back"></ion-icon>
+            </ion-button>
+        </ion-buttons>
+        <ion-title>Historial</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-item>
+        <ion-label>Fecha inicial</ion-label>
+        <ion-datetime #startDate [monthShortNames]="monthNames" (ionChange)="startChange($event.detail.value)" doneText="Aceptar" cancelText="Cancelar" displayFormat="D MMM YYYY" min="2021" [value]="hoyString"></ion-datetime>
+    </ion-item>
+
+    <ion-item>
+        <ion-label>Fecha final</ion-label>
+        <ion-datetime #endDate [monthShortNames]="monthNames" (ionChange)="endChange($event.detail.value)" doneText="Aceptar" cancelText="Cancelar" displayFormat="D MMM YYYY" min="2021" [value]="hoyString"></ion-datetime>
+    </ion-item>
+
+    <ion-button (click)="verRegistros()" [disabled]="!fechaFinal || !fechaInicial" expand="block" class="btn" shape="round">
+        Ver registros
+    </ion-button>
+
+    <div class="resumen_container" *ngIf="historial.length > 0">
+        <div style="border-right: 3px solid var(--ion-color-primary);">
+            <div class="tab_title">
+                {{ganancia}} MXN
+            </div>
+            <div class="tab-sub">
+                Ganancia total
+            </div>
+        </div>
+        <div>
+            <div class="tab_title">
+                {{ganancia}} MXN
+            </div>
+            <div class="tab-sub">
+                Efectivo cobrado
+            </div>
+        </div>
+    </div>
+
+    <ion-item *ngFor="let order of historial">
+        <ion-label>
+            <h3>ID: {{order.id_nano}}</h3>
+            <h4>Negocio: {{order.negocio_name}}</h4>
+            <p>Fecha: {{order.createdAt | date:'hh:mm d/MM/yyyy'}}</p>
+            <p>Ganancia: {{order.ganancia}} MXN</p>
+            <p>Forma pago: {{order.formaPago}}</p>
+            <p>Total: {{order.total}}</p>
+        </ion-label>
+    </ion-item>
+</ion-content>

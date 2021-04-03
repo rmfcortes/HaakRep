@@ -1,0 +1,33 @@
+<ion-content>
+    <form [formGroup]="form" (ngSubmit)="ingresarConCorreo()" class="box shadow">
+        <ion-item lines="none" style="text-align: center;">
+            <ion-img src="../../../assets/img/logo.png" style="width: 35%; margin-left: 32.5%;"></ion-img>
+        </ion-item>
+        <h1 style="color: var(--ion-color-primary); font-size: xx-large; font-weight: 700;">Bienvenido</h1>
+        <p style="margin-bottom: 4rem;">Haak para repartidores</p>
+        <ion-item lines="none" class="input margin">
+            <ion-label position="floating" class="grey">Correo</ion-label>
+            <ion-input type="text" formControlName="email"></ion-input>
+        </ion-item>
+        <ng-container *ngFor="let validation of validation_messages.email">
+            <div class="error-message" *ngIf="form.get('email').hasError(validation.type) && (form.get('email').dirty || form.get('email').touched)">
+                {{ validation.message }}
+            </div>
+        </ng-container>
+        <ion-item lines="none" class="input margin">
+            <ion-label position="floating" class="grey">Contraseña</ion-label>
+            <ion-input (keyup.enter)="blur(a)" #a type="password" formControlName="password"></ion-input>
+        </ion-item>
+        <ng-container *ngFor="let validation of validation_messages.password">
+            <div class="error-message" *ngIf="form.get('password').hasError(validation.type) && (form.get('password').dirty || form.get('password').touched)">
+                {{ validation.message }}
+            </div>
+        </ng-container>
+        <div class="error-message ion-text-wrap" *ngIf="err">
+            {{ err }}
+        </div>
+        <ion-button type="submit" shape="round" style="margin-top: 2rem;">
+            Ingresar
+        </ion-button>
+    </form>
+</ion-content>

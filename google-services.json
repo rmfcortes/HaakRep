@@ -1,0 +1,99 @@
+{
+  "project_info": {
+    "project_number": "200559564466",
+    "firebase_url": "https://foodcadereyta-275302.firebaseio.com",
+    "project_id": "foodcadereyta-275302",
+    "storage_bucket": "foodcadereyta-275302.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:200559564466:android:876f734f2df2bd2d03dbab",
+        "android_client_info": {
+          "package_name": "com.creatividadmovil.foodcadereyta"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "200559564466-eoiccpoqogna4mfsar53gms57ub4aa92.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.creatividadmovil.foodcadereyta",
+            "certificate_hash": "2f8e48da2e213d2d39db3abc886612eb53635b11"
+          }
+        },
+        {
+          "client_id": "200559564466-urbhhm6f3b6dabrlbkmil3r4se8nkl81.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.creatividadmovil.foodcadereyta",
+            "certificate_hash": "ae13572df159b19a958038d5563c58fbcffff1b3"
+          }
+        },
+        {
+          "client_id": "200559564466-8e4ckap4jpostcv03dd0lsn44nbjr9ml.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDihWtGc4NFHsmy91rjqDzt7SB-ge4uCcc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "200559564466-8e4ckap4jpostcv03dd0lsn44nbjr9ml.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "200559564466-hms3v6h4aqklq35go3ubjb5tusht4sg6.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.creatividadmovil.foodcadereyta"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:200559564466:android:998ca800e9f6c45203dbab",
+        "android_client_info": {
+          "package_name": "com.creatividadmovil.repartohaak"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "200559564466-8e4ckap4jpostcv03dd0lsn44nbjr9ml.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDihWtGc4NFHsmy91rjqDzt7SB-ge4uCcc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "200559564466-8e4ckap4jpostcv03dd0lsn44nbjr9ml.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "200559564466-hms3v6h4aqklq35go3ubjb5tusht4sg6.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.creatividadmovil.foodcadereyta"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

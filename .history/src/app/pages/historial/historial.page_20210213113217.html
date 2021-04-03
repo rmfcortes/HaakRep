@@ -1,0 +1,26 @@
+<ion-header>
+    <ion-toolbar color="primary">
+        <ion-buttons slot="start">
+            <ion-button [routerLink]="['']" routerDirection=“back”>
+                <ion-icon slot="icon-only" name="chevron-back"></ion-icon>
+            </ion-button>
+        </ion-buttons>
+        <ion-title>Historial</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-item>
+        <ion-label>Fecha inicial</ion-label>
+        <ion-datetime #startDate [monthShortNames]="monthNames" (ionChange)="startChange($event.detail.value)" doneText="Aceptar" cancelText="Cancelar" displayFormat="D MMM YYYY" min="2021" [value]="hoyString"></ion-datetime>
+    </ion-item>
+
+    <ion-item>
+        <ion-label>Fecha final</ion-label>
+        <ion-datetime #endDate [monthShortNames]="monthNames" (ionChange)="endChange($event.detail.value)" doneText="Aceptar" cancelText="Cancelar" displayFormat="D MMM YYYY" min="2021" [value]="hoyString"></ion-datetime>
+    </ion-item>
+
+    <ion-button (click)="verRegistros()" [disabled]="!fechaFinal || !fechaInicial" expand="block" class="btn" shape="round">
+        Ver registros
+    </ion-button>
+</ion-content>

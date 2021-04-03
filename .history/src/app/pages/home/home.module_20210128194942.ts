@@ -1,0 +1,26 @@
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { IonicModule } from '@ionic/angular';
+import { FormsModule } from '@angular/forms';
+import { HomePage } from './home.page';
+
+import { CallNumber } from '@ionic-native/call-number/ngx';
+
+import { HomePageRoutingModule } from './home-routing.module';
+import { OrderPageModule } from 'src/app/modals/order/order.module';
+import { CardModule } from 'src/app/shared/card.module';
+
+
+@NgModule({
+  imports: [
+    CommonModule,
+    FormsModule,
+    IonicModule,
+    CardModule,
+    OrderPageModule,
+    HomePageRoutingModule
+  ],
+  declarations: [HomePage],
+  providers: [CallNumber],
+})
+export class HomePageModule {}
